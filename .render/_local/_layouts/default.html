@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+
+      <div id="logo-banner">
+          {% if site.amwa_id == "SPECS" %}
+              <a href="https://www.amwa.tv"><img id="amwa-logo" src="{{ site.baseurl }}/assets/images/AMWA-logo.png" alt="AMWA logo"/></a>
+              <span id="title">Advanced Media Workflow Association</span>
+              <a href="https://www.amwa.tv"><img id="amwa-logo" src="{{ site.baseurl }}/assets/images/AMWA-logo.png" alt="AMWA logo"/></a>
+
+          {% else %}
+              <a href="https://{{ site.spec_server }}/nmos"><img id="nmos-logo" src="{{ site.baseurl }}/assets/images/NMOS-logo.png" alt="NMOS logo"/></a>
+              <span id="title">Networked Media Open Specifications</span>
+              <a href="https://www.amwa.tv/"><img id="from-amwa-logo" src="{{ site.baseurl }}/assets/images/from-AMWA-logo.png" target="_blank" alt="from AMWA logo"/></a>
+
+          {% endif %}
+      </div>
+
+        <div class="header" id="myHeader">
+
+        {% if site.default_tree == "branches/main" %}
+          <a href="{{ site.baseurl }}/">HOME</a>
+        {% endif %}
+
+        {% if site.data.docs %}
+          {% include docs_menu.html %}
+        {% endif %}
+        {% if site.data.apis %}
+          {% include apis_menu.html %}
+        {% endif %}
+        {% if site.data.examples %}
+          {% include examples_menu.html %}
+        {% endif %}
+        {% if site.data.branches or site.data.releases %}
+          {% include versions_menu.html %}
+        {% endif %}
+        {% if site.data.specs %}
+          {% include spec_menu.html menu_name="IS" menu_title="Interface Specifications" filter_id="IS-" %}
+          {% include spec_menu.html menu_name="BCP" menu_title="Best Common Practices" filter_id="BCP-" %}
+          {% include spec_menu.html menu_name="MS" menu_title="Data Model Specifications" filter_id="MS-" %}
+          {% include spec_menu.html menu_name="INFO" menu_title="Informative Documents" filter_id="INFO-" %}
+        {% endif %}
+        {% if site.data.registers %}
+          {% include registers_menu.html %}
+        {% endif %}
+
+          {% if site.amwa_id == "SPECS" %}
+
+            <a href="https://specs.amwa.tv/nmos">NMOS</a>
+            <a href="https://amwa.tv/projects/AS-11.shtml">AS-11</a>
+
+          {% else %}
+
+            <span class="dropdown">DEVEL
+              <div class="dropdown-content">
+                <p><b>Developer Links</b></p>
+                <p><a href="{{ site.github.repository_url }}">GitHub Repo</a></p>
+                <p><a href="https://{{ site.spec_server }}/nmos-testing">API Testing Tool</a></p>
+                <p><a href="https://{{ site.spec_server }}/nmos/Dashboard.html">CI Dashboard</a></p>
+              </div>
+            </span>
+
+          {% endif %}
+
+          <span class="dropdown">SEARCH
+            <div class="dropdown-content">
+              <script async src="https://cse.google.com/cse.js?cx=70787015d40930818"></script>
+              <div class="gcse-searchbox-only"></div>
+            </div>
+          </span>
+
+        {% unless site.default_tree == "branches/main" %}
+          <div class="breadcrumbs">
+            {% assign dirlist = page.url | split: "/" %}
+            {% assign nlinks = dirlist.size | minus: 2 | at_most: 4 %}
+            {% assign link = site.baseurl | append: "/" %}
+            <a href="{{ link }}">{{ site.amwa_id }}</a> ➤
+            {% for i in (1..nlinks) %}
+              {% assign link = link | append: dirlist[i] | append: "/" %}
+              <a href="{{ link }}"> {{ dirlist[i] }} </a> ➤
+            {% endfor %}
+            {% if dirlist.size > 2 %}
+              {% if dirlist[1] == "branches" %}
+                <span class="version-warning"><a href="{{ site.baseurl }}/releases">Viewing live branch. Click here for list of published releases.</a></span>
+              {% elsif dirlist[1] == "releases" %}
+                {% assign this_tree = dirlist[2] | prepend: "releases/" %}
+                {% if this_tree != site.default_tree  %}
+                  <span class="version-warning"><a href="{{ site.baseurl }}/releases">Viewing old release. Click here for list of published releases.</a></span>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          </div>
+        {% endunless %}
+
+        </div>
+
+      <div class="content">
+        <br/>
+        {{ content }}
+
+      </div>
+
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-center text-gray">
+          Documentation built at {{ site.time | date: '%H:%M:%S %Z on %Y-%m-%d' }}. <br/>
+      {% if site.github.private != true and site.github.license %}
+      (c) AMWA {{ site.time | date: '%Y' }}.
+      RAML/JSON licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0.html">Apache 2.0</a>.
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>.
+      {% endif %}
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+
+    {% if site.google_analytics %}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', '{{ site.google_analytics }}', 'auto');
+      ga('send', 'pageview');
+    </script>
+    {% endif %}
+
+
+    <script>
+    window.onscroll = function() {myFunction()};
+
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+
+    </script>
+  </body>
+</html>
