@@ -1,4 +1,4 @@
-# \[Work In Progress\] AMWA BCP-xxx-xx Distinguishing Information for NMOS Node and Device Resources
+# \[Work In Progress\] AMWA BCP-002-01 Distinguishing Information for NMOS Node and Device Resources
 {:.no_toc}
 
 - A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above

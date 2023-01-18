@@ -1,10 +1,10 @@
-amwa_id: bcp-resource-information
-url: https://specs.amwa.tv/bcp-resource-information
-name: AMWA NMOS Template Specification
-status: Continuing
-repo_name: bcp-resource-information
+amwa_id: bcp-002-02
+url: https://specs.amwa.tv/bcp-002-02
+name: AMWA NMOS Distinguishing Information for Node and Device Resources
+status: Work In Progress
+repo_name: bcp-002-02
 alt_repo_name: bcp-resource-information
-repo_url: https://github.com/AMWA-TV/bcp-resource-information
+repo_url: https://github.com/AMWA-TV/bcp-002-02
 releases:
 default_branch: main
-show_in_index: false
+show_in_index: true
