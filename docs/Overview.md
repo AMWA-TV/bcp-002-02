@@ -11,13 +11,12 @@ This Best Current Practice specifies how to provide additional metadata within N
 ## Introduction (informative)
 
 Within even the most modestly-sized system, there are likely to be multiple instances of a given Product, and possibly multiple instances of different Products provided by the same Manufacturer.
-It is fairly common for a configuration engineer to have to carry out 'detective work' to ascertain which Node (or Device) is which.
+It is fairly common for a configuration engineer to have to carry out 'detective work' to determine which Node (or Device) is which.
 
-Consider two example Products from the same Manufacturer:
+For example an IS-04 query might return multiple Nodes, all with a Node Label of `Acme-Widget-Pro`.  
+Without any other knowledge, the configuration engineer has no idea whether these are, for example, CCUs or Multiviewers, or which Widget Pro is which in the facility.
 
-The IS-04 label is hard coded by the manufacturer in the form: `ACME-ABC123-[SERIAL NUMBER]` (where `ACME` indicates the Manufacturer and `ABC123` the Product).  
-Without any other knowledge, the configuration engineer has no idea whether these are, for example, CCUs or Multiviewers.
-As the size of the installation grows larger, this situation is amplified many times over. A further dimension of potential confusion as added we introduce more Products manufactured by ACME.
+As the size of the installation grows larger, this situation is amplified many times over. A further dimension of potential confusion as added we introduce more Products manufactured by Acme.
 
 Prior to the creation of this Best Current Practice, there was no defined way of adding Distinguishing Information to NMOS Resources. Distinguishing Information is additional metadata that gives the necessary clues to the configuration engineer to assist when browsing/importing/allocating Resources.  
 
@@ -60,25 +59,44 @@ The Manufacturer of an Device need not be the same as its Node; for example Acme
 
 #### Product
 
-The name given by the Manufacturer for the NMOS Node or Device, e.g. "ABC123". Again, Devices might be different products to their enclosing Node.
+The name given by the Manufacturer for the NMOS Node or Device, e.g. "Widget Pro". Again, Devices might be different products to their enclosing Node.
 
 #### Serial Number
 
-Assigned by a Manufacturer to further identify Nodes and Devices that have the same Product name. There can be multiple Serial Numbers.
+Assigned by a Manufacturer to further identify Nodes and Devices that have the same Product name, e.g. "XYZ123-456789".
 
 #### Application
 
-The name of a function implemented by a Device, for example "UHD Decoder".
+The name of a function implemented by a Device, for example "UHD Decoder 01".
 
 ## Tagging Distinguishing Information (normative)
 
-Node implementations following this Best Current Practice MUST use the `asset` tag as defined in the [NMOS Parameters Registers][NPR-TAGS-ASSET] to indicate Distinguishing Information for Assets.
+Node implementations MUST indicate Distinguishing Information using `asset` tags as defined in the [NMOS Parameters Registers][NPR-TAGS-ASSET] as follows:
 
-Node implementations SHALL NOT require API clients to use other mechanisms.
+Node Resources MUST include exactly one such tag for each of: 
 
-### Duplication
+- Manufacturer
+- Product
+- Serial Number
 
-No duplication is permitted: where an entry would otherwise be duplicated between Node and Device structures within IS-04, it SHALL only appear once, in the Node definition. The corresponding Tag in the Device SHALL be omitted.
+The combination of Manufacturer, Product and Serial Number MUST be unique withing the IS-04 discovery context.
+
+> TODO: define "discovery context or propose a different term".
+
+Device Resources MUST include exactly one such tag for each of:
+
+- Manufacturer
+- Product
+- Serial Number
+- Application
+
+The combination of Manufacturer, Product, Serial Number and Application MUST be unique withing the IS-04 discovery context.
+
+> Note: A Device can have the same Manufacturer, Product and/or Serial Number as its associated Node.
+
+The tag values MUST reflect the current state of the Node or Device.
+
+> Note: this means that if a Device changes its function it will have to update its Application tag value.
 
 ## Example structure (informative)
 
@@ -86,18 +104,17 @@ No duplication is permitted: where an entry would otherwise be duplicated betwee
 {
  ...
   "tags": {
-    "urn:x-nmos:tag:asset:facts:serial-numbers/v1.0": [
-      "4CE0460D0G",
-      "p6774y"
-    ],
     "urn:x-nmos:tag:asset:facts:manufacturer/v1.0": [
-      "Manufacturer X"
+      "Acme"
     ],
     "urn:x-nmos:tag:asset:facts:product/v1.0": [
-      "Product A"
+      "Widget Pro"
+    ],
+    "urn:x-nmos:tag:asset:facts:serial-number/v1.0": [
+      "XYZ123-456789"
     ],
     "urn:x-nmos:tag:asset:facts:application/v1.0": [
-      "Application"
+      "UHD Decoder 01"
     ]
   },
   ...
