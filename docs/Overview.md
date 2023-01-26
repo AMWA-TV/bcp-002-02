@@ -1,4 +1,4 @@
-# \[Work In Progress\] AMWA BCP-002-01 Distinguishing Information for NMOS Node and Device Resources
+# \[Work In Progress\] AMWA BCP-002-02 Distinguishing Information for NMOS Node and Device Resources
 {:.no_toc}
 
 - A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
@@ -13,14 +13,13 @@ This Best Current Practice specifies how to provide additional metadata within N
 Within even the most modestly-sized system, there are likely to be multiple instances of a given Product, and possibly multiple instances of different Products provided by the same Manufacturer.
 It is fairly common for a configuration engineer to have to carry out 'detective work' to determine which Node (or Device) is which.
 
-For example an IS-04 query might return multiple Nodes, all with a Node Label of `Acme-Widget-Pro`.  
-Without any other knowledge, the configuration engineer has no idea whether these are, for example, CCUs or Multiviewers, or which Widget Pro is which in the facility.
+For example an IS-04 query might return multiple Nodes, all with a label of `Acme-Widget-Pro`. Without any other knowledge, a configuration engineer has no idea whether these are, for example, CCUs or Multiviewers, or which "Acme Widget Pro" is which in the installation.
 
-As the size of the installation grows larger, this situation is amplified many times over. A further dimension of potential confusion as added we introduce more Products manufactured by Acme.
+As the size of the installation grows, the problem increases significantly, and further confusion may occur as we introduce more Products manufactured by Acme.
 
-Prior to the creation of this Best Current Practice, there was no defined way of adding Distinguishing Information to NMOS Resources. Distinguishing Information is additional metadata that gives the necessary clues to the configuration engineer to assist when browsing/importing/allocating Resources.  
+Prior to the creation of this Best Current Practice, there was no defined way of adding Distinguishing Information to NMOS Resources. Distinguishing Information is additional metadata to assist configuration engineer when browsing/importing/allocating Resources.  
 
-This Best Current Practice recommends the use of Tags, defined in the [NMOS Parameter Registers][NPR] to provide Distguishing information.
+This Best Current Practice recommends the use of Tags, defined in the [NMOS Parameter Registers][NPR] to provide Distguishing Information.
 
 For IS-04 Node Resources this includes:
 
@@ -53,7 +52,9 @@ The following sub-sections define metadata items that can be used for Distinguis
 
 #### Manufacturer
 
-The name used by the company or other organisation creating/selling an NMOS Node or Device, e.g. "Acme" . Manufacturers are encouraged to normalise this across their range of Products, insofar as is posisble. AMWA will not maintain a registry of vendor names.
+The name used by the company or other organisation creating/selling an NMOS Node or Device, e.g. "Acme". Manufacturers are encouraged to normalise this across their range of Products.
+
+> Note: AMWA does not maintain a registry of vendor names.
 
 The Manufacturer of an Device need not be the same as its Node; for example Acme might manufacturer a hardware frame that provides the NMOS Node and is populated with third-party processing cards, or software modules, acting as NMOS Devices.
 
@@ -73,7 +74,7 @@ The name of a function implemented by a Device, for example "UHD Decoder 01".
 
 Node implementations MUST indicate Distinguishing Information using `asset` tags as defined in the [NMOS Parameters Registers][NPR-TAGS-ASSET] as follows:
 
-Node Resources MUST include exactly one such tag for each of: 
+Node Resources MUST include exactly one such tag for each of:
 
 - Manufacturer
 - Product
