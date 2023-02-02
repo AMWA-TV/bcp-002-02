@@ -25,14 +25,14 @@ For IS-04 Node Resources this includes:
 
 - Manufacturer
 - Product
-- Serial Number(s)
+- Instance
 
 For IS-04 Device Resources this includes:
 
 - Manufacturer
 - Product
-- Serial Number(s)
 - Application
+- Instance
 
 > Note: This does not prohibit the Manufacturer from adding 'user defined' Tags (typical usage might be Location, Frame Id etc).
 
@@ -62,36 +62,42 @@ The Manufacturer of an Device need not be the same as its Node; for example Acme
 
 The name given by the Manufacturer for the NMOS Node or Device, e.g. "Widget Pro". Again, Devices might be different products to their enclosing Node.
 
-#### Serial Number
+#### Instance
 
-Assigned by a Manufacturer to further identify Nodes and Devices that have the same Product name, e.g. "XYZ123-456789".
+Further identifies Nodes and Devices that have the same Product name.
+
+For a hardware Node or Device this is the serial number assigned by the Manufacturer, e.g. "XYZ123-456789".
+
+For a virtual or containerised Node or Device this could be an identifier provided by manufacturer or by dynamic provisioning.
 
 #### Application
 
-The name of a function implemented by a Device, for example "UHD Decoder 01".
+The name of the function implemented by a Device, for example "UHD Decoder 01".
 
 ## Tagging Distinguishing Information (normative)
 
 Node implementations MUST indicate Distinguishing Information using `asset` tags as defined in the [NMOS Parameters Registers][NPR-TAGS-ASSET] as follows:
 
-Node Resources MUST include exactly one such tag for each of:
+Node Resources MUST include exactly one such value for each of the following tags:
 
 - Manufacturer
 - Product
-- Serial Number
+- Instance
 
 The combination of Manufacturer, Product and Serial Number MUST be unique withing the IS-04 discovery context.
 
 > TODO: define "discovery context or propose a different term".
 
-Device Resources MUST include exactly one such tag for each of:
+Device Resources MUST include exactly one such value for each of the following tags:
 
 - Manufacturer
 - Product
-- Serial Number
 - Application
+- Instance
 
-The combination of Manufacturer, Product, Serial Number and Application MUST be unique withing the IS-04 discovery context.
+> TODO: add diagram
+
+The combination of Manufacturer, Product, Application and Instance MUST be unique withing the IS-04 discovery context.
 
 > Note: A Device can have the same Manufacturer, Product and/or Serial Number as its associated Node.
 
@@ -100,6 +106,8 @@ The tag values MUST reflect the current state of the Node or Device.
 > Note: this means that if a Device changes its function it will have to update its Application tag value.
 
 ## Example structure (informative)
+
+This shows example tags for a hardware device:
 
 ```json
 {
@@ -111,16 +119,18 @@ The tag values MUST reflect the current state of the Node or Device.
     "urn:x-nmos:tag:asset:facts:product/v1.0": [
       "Widget Pro"
     ],
-    "urn:x-nmos:tag:asset:facts:serial-number/v1.0": [
-      "XYZ123-456789"
-    ],
     "urn:x-nmos:tag:asset:facts:application/v1.0": [
-      "UHD Decoder 01"
+      "UHD Decoder"
+    ],
+    "urn:x-nmos:tag:asset:facts:instance/v1.0": [
+      "XYZ123-456789"
     ]
   },
   ...
 }
 ```
+
+> TODO: add a virtualised/containerised example
 
 ## Normative References
 
