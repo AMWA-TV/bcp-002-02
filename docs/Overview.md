@@ -84,7 +84,7 @@ Node Resources MUST include exactly one such value for each of the following tag
 - Product
 - Instance Identifier
 
-The combination of Manufacturer, Product and Instance Identifier MUST be unique withing the IS-04 discovery context.
+The combination of Manufacturer, Product and Instance Identifier MUST be unique within the IS-04 discovery context.
 
 > TODO: define "discovery context or propose a different term".
 
