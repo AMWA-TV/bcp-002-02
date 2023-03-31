@@ -93,91 +93,118 @@ The tag values MUST reflect the current state of the Node or Device.
 
 ## Examples
 
-1. Node with two identical Devices where each is a different Product with a unique serial number.
+1. Simple Product, a Node with a single logical Device.
 
-Node API `/self` resource:
-```json
-{
-  ...
-  "tags": {
-    "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
-    "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
-    "urn:x-nmos:tag:asset:instance-id/v1.0": [ "FRAME-12345ABC" ],
-  },
-  ...
-}
-```
+   Node API `/self` resource:
+   ```json
+   {
+     ...
+     "tags": {
+       "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
+       "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
+       "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC" ],
+     },
+     ...
+   }
+   ```
 
-Node API `/devices` resource:
-```json
-[
-  ...
-  {
-   ...
-    "tags": {
-      "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
-      "urn:x-nmos:tag:asset:product/v1.0": [ "Model-B" ],
-      "urn:x-nmos:tag:asset:instance-id/v1.0": [ "DEC-12345ABC" ],
-      "urn:x-nmos:tag:asset:function/v1.0": [ "Decoder" ]
-    },
-    ...
-  },
-  {
-   ...
-    "tags": {
-      "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
-      "urn:x-nmos:tag:asset:product/v1.0": [ "Model-C" ],
-      "urn:x-nmos:tag:asset:instance-id/v1.0": [ "DEC-67890XYZ" ],
-      "urn:x-nmos:tag:asset:function/v1.0": [ "Decoder" ]
-    },
-    ...
-  },
-  ...
-]
-```
+   Node API `/devices` resource:
+   ```json
+   [
+     {
+      ...
+       "tags": {
+         "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
+         "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
+         "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC" ],
+         "urn:x-nmos:tag:asset:function/v1.0": [ "Decoder" ]
+       },
+       ...
+     }
+   ]
+   ```
 
-2. Node with two identical Devices where only the Node has a unique serial number.
+2. Node with two identical Devices where each is a different Product with a unique serial number.
 
-Node API `/self` resource:
-```json
-{
-  ...
-  "tags": {
-    "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
-    "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
-    "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC" ],
-  },
-  ...
-}
-```
+   Node API `/self` resource:
+   ```json
+   {
+     ...
+     "tags": {
+       "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
+       "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
+       "urn:x-nmos:tag:asset:instance-id/v1.0": [ "FRAME-12345ABC" ],
+     },
+     ...
+   }
+   ```
 
-Node API `/devices` resource:
-```json
-[
-  ...
-  {
-   ...
-    "tags": {
-      "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
-      "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
-      "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC-1" ],
-      "urn:x-nmos:tag:asset:function/v1.0": [ "Decoder" ]
-    },
-    ...
-  },
-  {
-   ...
-    "tags": {
-      "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
-      "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
-      "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC-2" ],
-      "urn:x-nmos:tag:asset:function/v1.0": [ "Decoder" ]
-    },
-    ...
-  },
-  ...
-]
-```
+   Node API `/devices` resource:
+   ```json
+   [
+     {
+       ...
+       "tags": {
+         "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
+         "urn:x-nmos:tag:asset:product/v1.0": [ "Model-B" ],
+         "urn:x-nmos:tag:asset:instance-id/v1.0": [ "DEC-12345ABC" ],
+         "urn:x-nmos:tag:asset:function/v1.0": [ "Decoder" ]
+       },
+       ...
+     },
+     {
+       ...
+       "tags": {
+         "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
+         "urn:x-nmos:tag:asset:product/v1.0": [ "Model-C" ],
+         "urn:x-nmos:tag:asset:instance-id/v1.0": [ "DEC-67890XYZ" ],
+         "urn:x-nmos:tag:asset:function/v1.0": [ "Decoder" ]
+       },
+       ...
+     }
+   ]
+   ```
+
+3. Node with two identical Devices where only the Node has a unique serial number.
+
+   Node API `/self` resource:
+   ```json
+   {
+     ...
+     "tags": {
+       "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
+       "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
+       "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC" ],
+     },
+     ...
+   }
+   ```
+
+   Node API `/devices` resource:
+   ```json
+   [
+     {
+       ...
+       "tags": {
+         "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
+         "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
+         "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC-1" ],
+         "urn:x-nmos:tag:asset:function/v1.0": [ "Decoder" ]
+       },
+       ...
+     },
+     {
+       ...
+       "tags": {
+         "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
+         "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
+         "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC-2" ],
+         "urn:x-nmos:tag:asset:function/v1.0": [ "Decoder" ]
+       },
+       ...
+     }
+   ]
+   ```
 
 ## Normative References
 
