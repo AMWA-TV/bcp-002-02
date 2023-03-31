@@ -84,22 +84,22 @@ The name of the function implemented by a Device within its Node, for example "U
 
 ## Tagging Distinguishing Information
 
-Node implementations MUST indicate Distinguishing Information using `asset` tags as defined in the [NMOS Parameters Registers][NPR-TAGS-ASSET] as follows.
+Node implementations MUST indicate Distinguishing Information using `asset` tags as defined in the [Tags register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/) of the [NMOS Parameters Registers][NPR] as follows.
 
 Node Resources MUST include exactly one value for each of the following tags:
 
-- Manufacturer
-- Product
-- Instance Identifier
+- [Manufacturer](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-manufacturer)
+- [Product](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-product)
+- [Instance Identifier](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-instance-identifier)
 
 The combination of Node Manufacturer, Product and Instance Identifier MUST be unique.
 
 Device Resources MUST include exactly one value for each of the following tags:
 
-- Manufacturer
-- Product
-- Instance Identifier
-- Function
+- [Manufacturer](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-manufacturer)
+- [Product](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-product)
+- [Instance Identifier](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-instance-identifier)
+- [Function](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-function)
 
 The combination of Device Manufacturer, Product and Instance Identifier MUST be unique.
 
@@ -141,7 +141,5 @@ This shows example tags for a hardware device:
 These appear at the end of the Markdown source for this document, and are referenced as hyperlinks within the main body.
 
 [RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs to Indicate Requirement Levels"
-
-[NPR-TAGS-ASSET]: https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/asset.html "Asset Tags"
 
 [NPR]: https://specs.amwa.tv/nmos-parameter-registers "NMOS Parameter Registers"
