@@ -18,7 +18,7 @@ This repository holds the source for this Specification, part of the family of [
 ### How does it work?
 
 - It defines tags for fixed information about Nodes and Devices.
-- These include Manufacturer, Product, Instance Identifier, and (for Devices only) Function.
+- These include Manufacturer, Product Name, Instance Identifier, and (for Devices only) Function.
 
 <!-- INTRO-END -->
 

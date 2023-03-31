@@ -10,18 +10,18 @@ This Best Current Practice specifies how to provide additional metadata within N
 
 ## Introduction
 
-Within even the most modestly-sized system, there are likely to be multiple instances of a given Product, and possibly multiple instances of different Products provided by the same Manufacturer.
+Within even the most modestly-sized system, there are likely to be multiple instances of a given product, and possibly multiple instances of different products provided by the same Manufacturer.
 It is fairly common for a configuration engineer to have to carry out 'detective work' to determine which Asset – an NMOS Node or Device – is which. 
 
 For example an IS-04 query might return multiple Nodes, all with a label of `Acme-Widget-Pro`.
 Without any other knowledge, a configuration engineer has no idea whether these are, for example, CCUs or Multiviewers, or which "Acme Widget Pro" is which in the installation.
 
-As the size of the installation grows, the problem increases significantly, and further confusion may occur as we introduce more Products manufactured by Acme.
+As the size of the installation grows, the problem increases significantly, and further confusion may occur as we introduce more products manufactured by Acme.
 
 Prior to the creation of this Best Current Practice, there was no common, established way of adding Distinguishing Information to NMOS Assets.
 Distinguishing Information is additional metadata to assist configuration engineer when browsing/importing/allocating Assets.
 
-This Best Current Practice recommends the use of Tags, defined in the [NMOS Parameter Registers][NPR] to provide Distinguishing Information.
+This Best Current Practice specifies the use of four Tags defined in the [NMOS Parameter Registers][NPR] to provide Distinguishing Information.
 
 > Note: This does not prohibit the Manufacturer from also adding 'user defined' Tags (typical usage might be Location, Frame Identifier, etc.).
 
@@ -35,7 +35,7 @@ _See also the NMOS Glossary, and definitions within RFCs._
 
 ### Asset
 
-A Node or Device. A Device is a logical block of functionality. A Node is a logical host for Devices. These Devices can be physical or virtual, for example software modules or plugin hardware.
+A Node or Device. A Node is a logical host for Devices. A Device is a logical block of functionality. These Devices can be physical or virtual, for example software modules or plugin hardware.
 
 ### Distinguishing Information
 
@@ -45,9 +45,9 @@ The following sub-sections define metadata items that are used as Distinguishing
 
 #### Manufacturer
 
-The name used by the company or other organisation creating/selling an Asset, e.g. "Acme". Manufacturers are encouraged to normalise this across their range of Products.
+The name used by the company or other organisation creating/selling an Asset, e.g. "Acme". Manufacturers are encouraged to normalise this across their range of products.
 
-> Note: AMWA does not maintain a registry of vendor names.
+> Note: The AMWA does not maintain a registry of vendor names.
 
 The Manufacturer of a Device need not be the same as the Node which hosts it; for example Acme might manufacturer a hardware frame that provides the NMOS Node and is populated with third-party processing cards, or software modules, acting as NMOS Devices.
 
@@ -57,7 +57,7 @@ The name given by the Manufacturer for the Asset, e.g. "Widget Pro". Again, Devi
 
 #### Instance Identifier
 
-Further distinguishes Assets that have the same Product name.
+Further distinguishes Assets that have the same Product Name.
 
 For a hardware Asset this is the serial number assigned by the Manufacturer, e.g. "XYZ123-456789".
 
@@ -77,9 +77,9 @@ Node and Device Resources MUST include exactly one value for each of the followi
 - [Product Name](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-product)
 - [Instance Identifier](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-instance-identifier)
 
-The combination of Manufacturer, Product and Instance Identifier MUST be unique among Nodes or Devices.
+The combination of Manufacturer, Product Name and Instance Identifier MUST be unique among Nodes or Devices.
 
-> Note: A Device can have the same Manufacturer, Product and/or Instance Identifier as its associated Node.
+> Note: A Device can have the same Manufacturer, Product Name and/or Instance Identifier as its associated Node.
 
 Device Resources MUST also include at least one value for the following tag:
 
@@ -91,7 +91,7 @@ The tag values MUST reflect the current state of the Node or Device.
 
 ## Examples
 
-1. Simple Product, a Node with a single logical Device.
+1. Simple product, a Node with a single logical Device.
 
    Node API `/self` resource:
    ```json
@@ -122,7 +122,7 @@ The tag values MUST reflect the current state of the Node or Device.
    ]
    ```
 
-2. Node with two identical Devices where each is a different Product with a unique serial number.
+2. Node with two identical Devices where each is a different product with a unique serial number.
 
    Node API `/self` resource:
    ```json
