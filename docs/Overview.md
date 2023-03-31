@@ -65,9 +65,7 @@ For a virtual or containerised Asset this could be an identifier provided by the
 
 #### Function
 
-The name of the function implemented by a Device within its Node, for example "UHD Decoder 01".
-
-> TODO: add more examples
+The name of the function implemented by a Device within its Node, for example "Decoder", "Encoder", "Converter" or "Analyzer".
 
 ## Tagging Distinguishing Information
 
