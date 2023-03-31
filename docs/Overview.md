@@ -19,7 +19,7 @@ As the size of the installation grows, the problem increases significantly, and 
 
 Prior to the creation of this Best Current Practice, there was no common, established way of adding Distinguishing Information to NMOS Resources. Distinguishing Information is additional metadata to assist configuration engineer when browsing/importing/allocating Resources.
 
-This Best Current Practice recommends the use of Tags, defined in the [NMOS Parameter Registers][NPR] to provide Distguishing Information.
+This Best Current Practice recommends the use of Tags, defined in the [NMOS Parameter Registers][NPR] to provide Distinguishing Information.
 
 For IS-04 Node Resources this includes:
 
