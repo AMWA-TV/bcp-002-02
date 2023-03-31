@@ -102,7 +102,7 @@ The tag values MUST reflect the current state of the Node or Device.
      "tags": {
        "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
        "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
-       "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC" ],
+       "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC" ]
      },
      ...
    }
@@ -133,7 +133,7 @@ The tag values MUST reflect the current state of the Node or Device.
      "tags": {
        "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
        "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
-       "urn:x-nmos:tag:asset:instance-id/v1.0": [ "FRAME-12345ABC" ],
+       "urn:x-nmos:tag:asset:instance-id/v1.0": [ "FRAME-12345ABC" ]
      },
      ...
    }
@@ -174,7 +174,7 @@ The tag values MUST reflect the current state of the Node or Device.
      "tags": {
        "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
        "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
-       "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC" ],
+       "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC" ]
      },
      ...
    }
