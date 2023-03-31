@@ -23,20 +23,7 @@ Distinguishing Information is additional metadata to assist configuration engine
 
 This Best Current Practice recommends the use of Tags, defined in the [NMOS Parameter Registers][NPR] to provide Distinguishing Information.
 
-For IS-04 Node Resources this includes:
-
-- Manufacturer
-- Product
-- Instance Identifier
-
-For IS-04 Device Resources this includes:
-
-- Manufacturer
-- Product
-- Instance Identifier
-- Function
-
-> Note: This does not prohibit the Manufacturer from adding 'user defined' Tags (typical usage might be Location, Frame Identifier, etc.).
+> Note: This does not prohibit the Manufacturer from also adding 'user defined' Tags (typical usage might be Location, Frame Identifier, etc.).
 
 ## Use of Normative Language
 
@@ -64,7 +51,7 @@ The name used by the company or other organisation creating/selling an Asset, e.
 
 The Manufacturer of a Device need not be the same as the Node which hosts it; for example Acme might manufacturer a hardware frame that provides the NMOS Node and is populated with third-party processing cards, or software modules, acting as NMOS Devices.
 
-#### Product
+#### Product Name
 
 The name given by the Manufacturer for the Asset, e.g. "Widget Pro". Again, Devices might be different products to their enclosing Node.
 
@@ -86,24 +73,19 @@ The name of the function implemented by a Device within its Node, for example "U
 
 Node implementations MUST indicate Distinguishing Information using `asset` tags as defined in the [Tags register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/) of the [NMOS Parameters Registers][NPR] as follows.
 
-Node Resources MUST include exactly one value for each of the following tags:
+Node and Device Resources MUST include exactly one value for each of the following tags:
 
 - [Manufacturer](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-manufacturer)
-- [Product](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-product)
+- [Product Name](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-product)
 - [Instance Identifier](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-instance-identifier)
 
-The combination of Node Manufacturer, Product and Instance Identifier MUST be unique.
-
-Device Resources MUST include exactly one value for each of the following tags:
-
-- [Manufacturer](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-manufacturer)
-- [Product](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-product)
-- [Instance Identifier](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-instance-identifier)
-- [Function](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-function)
-
-The combination of Device Manufacturer, Product and Instance Identifier MUST be unique.
+The combination of Manufacturer, Product and Instance Identifier MUST be unique among Nodes or Devices.
 
 > Note: A Device can have the same Manufacturer, Product and/or Instance Identifier as its associated Node.
+
+Device Resources MUST also include exactly one value for the following tag:
+
+- [Function](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-function)
 
 The tag values MUST reflect the current state of the Node or Device.
 
