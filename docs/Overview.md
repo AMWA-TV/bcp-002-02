@@ -1,4 +1,4 @@
-# \[Work In Progress\] AMWA BCP-002-02 Distinguishing Information for NMOS Node and Device Resources
+# \[Work In Progress\] AMWA BCP-002-02 NMOS Asset Distinguishing Information 
 {:.no_toc}
 
 - A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
@@ -6,12 +6,12 @@
 
 ## Scope
 
-This Best Current Practice specifies how to provide additional metadata within NMOS APIs for an NMOS Node and an NMOS Device to enable a human to more easily distinguish among multiple Nodes and among multiple Devices.
+This Best Current Practice specifies how to provide additional metadata within NMOS APIs to enable a human to more easily distinguish among multiple NMOS Assets.
 
-## Introduction (informative)
+## Introduction
 
 Within even the most modestly-sized system, there are likely to be multiple instances of a given Product, and possibly multiple instances of different Products provided by the same Manufacturer.
-It is fairly common for a configuration engineer to have to carry out 'detective work' to determine which Node (or Device) is which.
+It is fairly common for a configuration engineer to have to carry out 'detective work' to determine which Asset – an NMOS Node or Device – is which. 
 
 For example an IS-04 query might return multiple Nodes, all with a label of `Acme-Widget-Pro`. Without any other knowledge, a configuration engineer has no idea whether these are, for example, CCUs or Multiviewers, or which "Acme Widget Pro" is which in the installation.
 
@@ -44,15 +44,20 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 _See also the NMOS Glossary, and definitions within RFCs._
 
+
+### Assets
+
+A Node or Device. A Device is a logical block of functionality. A Node is a logical host for Devices. These Devices can be physical or virtual, for example software modules or plugin hardware.
+
 ### Distinguishing Information
 
-One or more items of metadata associated with an NMOS Resource that (in combination) provide a human-friendly way of identifying that resource.
+One or more items of metadata associated with an Asset that (in combination) provide a human-friendly way of identifying that Asset.
 
 The following sub-sections define metadata items that are used as Distinguishing Information.
 
 #### Manufacturer
 
-The name used by the company or other organisation creating/selling an NMOS Node or Device, e.g. "Acme". Manufacturers are encouraged to normalise this across their range of Products.
+The name used by the company or other organisation creating/selling an Asset, e.g. "Acme". Manufacturers are encouraged to normalise this across their range of Products.
 
 > Note: AMWA does not maintain a registry of vendor names.
 
@@ -60,21 +65,23 @@ The Manufacturer of a Device need not be the same as the Node which hosts it; fo
 
 #### Product
 
-The name given by the Manufacturer for the NMOS Node or Device, e.g. "Widget Pro". Again, Devices might be different products to their enclosing Node.
+The name given by the Manufacturer for the Asset, e.g. "Widget Pro". Again, Devices might be different products to their enclosing Node.
 
 #### Instance Identifier
 
-Further distinguishes Nodes and Devices that have the same Product name.
+Further distinguishes Assets that have the same Product name.
 
-For a hardware Node or Device this is the serial number assigned by the Manufacturer, e.g. "XYZ123-456789".
+For a hardware Asset this is the serial number assigned by the Manufacturer, e.g. "XYZ123-456789".
 
-For a virtual or containerised Node or Device this could be an identifier provided by the manufacturer or by dynamic provisioning.
+For a virtual or containerised Asset this could be an identifier provided by the manufacturer or by dynamic provisioning.
 
 #### Function
 
 The name of the function implemented by a Device within its Node, for example "UHD Decoder 01".
 
-## Tagging Distinguishing Information (normative)
+> TODO: add more examples
+
+## Tagging Distinguishing Information
 
 Node implementations MUST indicate Distinguishing Information using `asset` tags as defined in the [NMOS Parameters Registers][NPR-TAGS-ASSET] as follows.
 
@@ -105,7 +112,7 @@ The tag values MUST reflect the current state of the Node or Device.
 
 > Note: this means that if a Device changes its function it will have to update its Function tag value.
 
-## Example structure (informative)
+## Example structure
 
 This shows example tags for a hardware device:
 
