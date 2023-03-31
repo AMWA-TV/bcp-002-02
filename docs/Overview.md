@@ -83,7 +83,7 @@ The combination of Manufacturer, Product and Instance Identifier MUST be unique 
 
 > Note: A Device can have the same Manufacturer, Product and/or Instance Identifier as its associated Node.
 
-Device Resources MUST also include exactly one value for the following tag:
+Device Resources MUST also include at least one value for the following tag:
 
 - [Function](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-function)
 
