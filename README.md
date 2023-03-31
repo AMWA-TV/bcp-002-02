@@ -1,4 +1,4 @@
-# \[Work In Progress\] AMWA BCP-002-02 Distinguishing Information for NMOS Node and Device Resources
+# \[Work In Progress\] AMWA BCP-002-02 NMOS Asset Distinguishing Information
 
 [![Lint Status](https://github.com/AMWA-TV/bcp-002-02/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/bcp-002-02/actions?query=workflow%3ALint)
 [![Render Status](https://github.com/AMWA-TV/bcp-002-02/workflows/Render/badge.svg)](https://github.com/AMWA-TV/bcp-002-02/actions?query=workflow%3ARender)
@@ -9,7 +9,7 @@ This repository holds the source for this Specification, part of the family of [
 
 ### What does it do?
 
-- It defines how to provide human-readable distinguishing information for NMOS Nodes and Devices.
+- It defines how to provide human-readable distinguishing information for NMOS Assets - Nodes and Devices.
 
 ### Why does it matter?
 
@@ -18,7 +18,7 @@ This repository holds the source for this Specification, part of the family of [
 ### How does it work?
 
 - It defines tags for fixed information about Nodes and Devices.
-- These include Manufacturer, Model, Serial Number, and (for Devices only) Application.
+- These include Manufacturer, Product, Instance Identifier, and (for Devices only) Function.
 
 <!-- INTRO-END -->
 

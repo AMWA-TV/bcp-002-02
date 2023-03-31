@@ -1,6 +1,6 @@
 amwa_id: BCP-002-02
 url: https://specs.amwa.tv/bcp-002-02
-name: Distinguishing Information for Node and Device Resources
+name: Asset Distinguishing Information
 status: Work In Progress
 repo_name: bcp-002-02
 alt_repo_name: bcp-resource-information
