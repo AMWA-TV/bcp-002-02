@@ -17,24 +17,24 @@ For example an IS-04 query might return multiple Nodes, all with a label of `Acm
 
 As the size of the installation grows, the problem increases significantly, and further confusion may occur as we introduce more Products manufactured by Acme.
 
-Prior to the creation of this Best Current Practice, there was no defined way of adding Distinguishing Information to NMOS Resources. Distinguishing Information is additional metadata to assist configuration engineer when browsing/importing/allocating Resources.  
+Prior to the creation of this Best Current Practice, there was no common, established way of adding Distinguishing Information to NMOS Resources. Distinguishing Information is additional metadata to assist configuration engineer when browsing/importing/allocating Resources.
 
-This Best Current Practice recommends the use of Tags, defined in the [NMOS Parameter Registers][NPR] to provide Distguishing Information.
+This Best Current Practice recommends the use of Tags, defined in the [NMOS Parameter Registers][NPR] to provide Distinguishing Information.
 
 For IS-04 Node Resources this includes:
 
 - Manufacturer
 - Product
-- Instance
+- Instance Identifier
 
 For IS-04 Device Resources this includes:
 
 - Manufacturer
 - Product
-- Application
-- Instance
+- Instance Identifier
+- Function
 
-> Note: This does not prohibit the Manufacturer from adding 'user defined' Tags (typical usage might be Location, Frame Id etc).
+> Note: This does not prohibit the Manufacturer from adding 'user defined' Tags (typical usage might be Location, Frame Identifier, etc.).
 
 ## Use of Normative Language
 
@@ -48,7 +48,7 @@ _See also the NMOS Glossary, and definitions within RFCs._
 
 One or more items of metadata associated with an NMOS Resource that (in combination) provide a human-friendly way of identifying that resource.
 
-The following sub-sections define metadata items that can be used for Distinguishing Information:
+The following sub-sections define metadata items that are used as Distinguishing Information.
 
 #### Manufacturer
 
@@ -56,35 +56,35 @@ The name used by the company or other organisation creating/selling an NMOS Node
 
 > Note: AMWA does not maintain a registry of vendor names.
 
-The Manufacturer of an Device need not be the same as its Node; for example Acme might manufacturer a hardware frame that provides the NMOS Node and is populated with third-party processing cards, or software modules, acting as NMOS Devices.
+The Manufacturer of a Device need not be the same as the Node which hosts it; for example Acme might manufacturer a hardware frame that provides the NMOS Node and is populated with third-party processing cards, or software modules, acting as NMOS Devices.
 
 #### Product
 
 The name given by the Manufacturer for the NMOS Node or Device, e.g. "Widget Pro". Again, Devices might be different products to their enclosing Node.
 
-#### Instance
+#### Instance Identifier
 
-Further identifies Nodes and Devices that have the same Product name.
+Further distinguishes Nodes and Devices that have the same Product name.
 
 For a hardware Node or Device this is the serial number assigned by the Manufacturer, e.g. "XYZ123-456789".
 
-For a virtual or containerised Node or Device this could be an identifier provided by manufacturer or by dynamic provisioning.
+For a virtual or containerised Node or Device this could be an identifier provided by the manufacturer or by dynamic provisioning.
 
-#### Application
+#### Function
 
-The name of the function implemented by a Device, for example "UHD Decoder 01".
+The name of the function implemented by a Device within its Node, for example "UHD Decoder 01".
 
 ## Tagging Distinguishing Information (normative)
 
-Node implementations MUST indicate Distinguishing Information using `asset` tags as defined in the [NMOS Parameters Registers][NPR-TAGS-ASSET] as follows:
+Node implementations MUST indicate Distinguishing Information using `asset` tags as defined in the [NMOS Parameters Registers][NPR-TAGS-ASSET] as follows.
 
 Node Resources MUST include exactly one such value for each of the following tags:
 
 - Manufacturer
 - Product
-- Instance
+- Instance Identifier
 
-The combination of Manufacturer, Product and Serial Number MUST be unique withing the IS-04 discovery context.
+The combination of Manufacturer, Product and Instance Identifier MUST be unique within the IS-04 discovery context.
 
 > TODO: define "discovery context or propose a different term".
 
@@ -92,18 +92,18 @@ Device Resources MUST include exactly one such value for each of the following t
 
 - Manufacturer
 - Product
-- Application
-- Instance
+- Instance Identifier
+- Function
 
 > TODO: add diagram
 
-The combination of Manufacturer, Product, Application and Instance MUST be unique withing the IS-04 discovery context.
+The combination of Manufacturer, Product and Instance Identifier MUST be unique within the IS-04 discovery context.
 
-> Note: A Device can have the same Manufacturer, Product and/or Serial Number as its associated Node.
+> Note: A Device can have the same Manufacturer, Product and/or Instance Identifier as its associated Node.
 
 The tag values MUST reflect the current state of the Node or Device.
 
-> Note: this means that if a Device changes its function it will have to update its Application tag value.
+> Note: this means that if a Device changes its function it will have to update its Function tag value.
 
 ## Example structure (informative)
 
@@ -113,17 +113,17 @@ This shows example tags for a hardware device:
 {
  ...
   "tags": {
-    "urn:x-nmos:tag:asset:facts:manufacturer/v1.0": [
+    "urn:x-nmos:tag:asset:manufacturer/v1.0": [
       "Acme"
     ],
-    "urn:x-nmos:tag:asset:facts:product/v1.0": [
+    "urn:x-nmos:tag:asset:product/v1.0": [
       "Widget Pro"
     ],
-    "urn:x-nmos:tag:asset:facts:application/v1.0": [
-      "UHD Decoder"
-    ],
-    "urn:x-nmos:tag:asset:facts:instance/v1.0": [
+    "urn:x-nmos:tag:asset:instance-id/v1.0": [
       "XYZ123-456789"
+    ],
+    "urn:x-nmos:tag:asset:function/v1.0": [
+      "UHD Decoder"
     ]
   },
   ...
