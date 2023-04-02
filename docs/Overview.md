@@ -21,7 +21,7 @@ As the size of the installation grows, the problem increases significantly, and 
 Prior to the creation of this Best Current Practice, there was no common, established way of adding Distinguishing Information to NMOS Assets.
 Distinguishing Information is additional metadata to assist configuration engineer when browsing/importing/allocating Assets.
 
-This Best Current Practice specifies the use of four Tags defined in the [NMOS Parameter Registers][NPR] to provide Distinguishing Information.
+This Best Current Practice specifies the use of four Tags defined in the [NMOS Parameter Registers][NPR] to provide Distinguishing Information for Node and Device Resources in [IS-04][].
 
 > Note: This does not prohibit the Manufacturer from also adding 'user defined' Tags (typical usage might be Location, Frame Identifier, etc.).
 
@@ -31,7 +31,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 ## Definitions
 
-_See also the NMOS Glossary, and definitions within RFCs._
+See also the [NMOS Glossary][Glossary].
 
 ### Asset
 
@@ -69,7 +69,7 @@ The name of the function implemented by a Device within its Node, for example "D
 
 ## Tagging Distinguishing Information
 
-Node implementations MUST indicate Distinguishing Information using `asset` tags as defined in the [Tags register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/) of the [NMOS Parameters Registers][NPR] as follows.
+Node implementations MUST indicate Distinguishing Information in the [IS-04][] Node API using `asset` tags as defined in the [Tags register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/) of the [NMOS Parameters Registers][NPR] as follows.
 
 Node and Device Resources MUST include exactly one value for each of the following tags:
 
@@ -209,5 +209,6 @@ The tag values MUST reflect the current state of the Node or Device.
 These appear at the end of the Markdown source for this document, and are referenced as hyperlinks within the main body.
 
 [RFC-2119]: https://tools.ietf.org/html/rfc2119 "Key words for use in RFCs to Indicate Requirement Levels"
-
+[Glossary]: https://specs.amwa.tv/nmos/main/docs/Glossary.html "NMOS Glossary"
+[IS-04]: https://specs.amwa.tv/is-04 "AMWA IS-04 NMOS Discovery and Registration Specification (Stable)"
 [NPR]: https://specs.amwa.tv/nmos-parameter-registers "NMOS Parameter Registers"
