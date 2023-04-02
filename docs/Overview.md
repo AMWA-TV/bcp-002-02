@@ -19,7 +19,7 @@ Without any other knowledge, a configuration engineer has no idea whether these 
 As the size of the installation grows, the problem increases significantly, and further confusion may occur as we introduce more products manufactured by Acme.
 
 Prior to the creation of this Best Current Practice, there was no common, established way of adding Distinguishing Information to NMOS Assets.
-Distinguishing Information is additional metadata to assist configuration engineer when browsing/importing/allocating Assets.
+Distinguishing Information is additional metadata to assist a configuration engineer when browsing/importing/allocating Assets.
 
 This Best Current Practice specifies the use of four Tags defined in the [NMOS Parameter Registers][NPR] to provide Distinguishing Information for Node and Device Resources in [IS-04][].
 
@@ -49,7 +49,7 @@ The name used by the company or other organisation creating/selling an Asset, e.
 
 > Note: The AMWA does not maintain a registry of vendor names.
 
-The Manufacturer of a Device need not be the same as the Node which hosts it; for example Acme might manufacturer a hardware frame that provides the NMOS Node and is populated with third-party processing cards, or software modules, acting as NMOS Devices.
+The Manufacturer of a Device need not be the same as the Node which hosts it; for example Acme might manufacture a hardware frame that provides the NMOS Node and is populated with third-party processing cards, or software modules, acting as NMOS Devices.
 
 #### Product Name
 
