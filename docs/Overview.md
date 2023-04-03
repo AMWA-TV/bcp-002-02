@@ -41,6 +41,8 @@ A Node or Device. A Node is a logical host for Devices. A Device is a logical bl
 
 One or more items of metadata associated with an Asset that (in combination) provide a human-friendly way of identifying that Asset.
 
+The Distinguishing Information will match what is typically physically written on a hardware Asset and/or provided by the Manufacturer through a user interface or API.
+
 The following sub-sections define metadata items that are used as Distinguishing Information.
 
 #### Manufacturer
@@ -203,6 +205,11 @@ The tag values MUST reflect the current state of the Node or Device.
      }
    ]
    ```
+
+## Controllers
+
+Controllers MUST enable Users to see the Distinguishing Information associated with an Asset or its sub-resources.
+Controllers SHOULD enable Users to search for an Asset or its sub-resources based on Distinguishing Information.
 
 ## Normative References
 
