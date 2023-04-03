@@ -21,7 +21,7 @@ As the size of the installation grows, the problem increases significantly, and 
 Prior to the creation of this Best Current Practice, there was no common, established way of adding Distinguishing Information to NMOS Assets.
 Distinguishing Information is additional metadata to assist a configuration engineer when browsing/importing/allocating Assets.
 
-This Best Current Practice specifies the use of four Tags defined in the [NMOS Parameter Registers][NPR] to provide Distinguishing Information for Node and Device Resources in [IS-04][].
+This Best Current Practice specifies the use of four Tags defined in the [NMOS Parameter Registers][NPR] to provide Distinguishing Information for Node and Device resources in [IS-04][].
 
 > Note: This does not prohibit the Manufacturer from also adding 'user defined' Tags (typical usage might be Location, Frame Identifier, etc.).
 
@@ -71,7 +71,7 @@ The name of the function implemented by a Device within its Node, for example "D
 
 Node implementations MUST indicate Distinguishing Information in the [IS-04][] Node API using `asset` tags as defined in the [Tags register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/) of the [NMOS Parameters Registers][NPR] as follows.
 
-Node and Device Resources MUST include exactly one value for each of the following tags:
+Node and Device resources MUST include exactly one value for each of the following tags:
 
 - [Manufacturer](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-manufacturer)
 - [Product Name](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-product)
@@ -81,7 +81,7 @@ The combination of Manufacturer, Product Name and Instance Identifier MUST be un
 
 > Note: A Device can have the same Manufacturer, Product Name and/or Instance Identifier as its associated Node.
 
-Device Resources MUST also include at least one value for the following tag:
+Device resources MUST also include at least one value for the following tag:
 
 - [Function](https://specs.amwa.tv/nmos-parameter-registers/branches/main/tags/#asset-function)
 
