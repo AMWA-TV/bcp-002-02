@@ -204,6 +204,11 @@ The tag values MUST reflect the current state of the Node or Device.
    ]
    ```
 
+## Controllers
+
+Controllers MUST enable Users to see the Distinguishing Information associated with an Asset or its sub-resources.
+Controllers SHOULD enable Users to search for an Asset or its sub-resources based on Distinguishing Information.
+
 ## Normative References
 
 These appear at the end of the Markdown source for this document, and are referenced as hyperlinks within the main body.
