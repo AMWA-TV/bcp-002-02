@@ -1,4 +1,4 @@
-# \[Work In Progress\] AMWA BCP-002-02 NMOS Asset Distinguishing Information
+# AMWA BCP-002-02 NMOS Asset Distinguishing Information
 
 [![Lint Status](https://github.com/AMWA-TV/bcp-002-02/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/bcp-002-02/actions?query=workflow%3ALint)
 [![Render Status](https://github.com/AMWA-TV/bcp-002-02/workflows/Render/badge.svg)](https://github.com/AMWA-TV/bcp-002-02/actions?query=workflow%3ARender)
