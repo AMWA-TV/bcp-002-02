@@ -1,4 +1,4 @@
-# \[Work In Progress\] AMWA BCP-002-02 NMOS Asset Distinguishing Information 
+# AMWA BCP-002-02 NMOS Asset Distinguishing Information 
 {:.no_toc}
 
 - A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
