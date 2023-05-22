@@ -1,0 +1,128 @@
+[
+  {
+    "label": "Example 1 Node",
+    "description": "Simple product, a Node with a single logical Device",
+    "tags": {
+      "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
+      "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
+      "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC" ]
+    },
+    "id": "90b413e0-86cb-4fef-8ebc-42e9d5864e42",
+    "version": "1684746638:31415927",
+    "hostname": "host1.example.com",
+    "href": "http://host1.example.com/",
+    "api": {
+      "versions": [ "v1.1", "v1.2", "v1.3" ],
+      "endpoints": [
+        {
+          "host": "host1.example.com",
+          "port": 80,
+          "protocol": "http"
+        }
+      ]
+    },
+    "services": [],
+    "caps": {},
+    "clocks": [
+      {
+        "name": "clk0",
+        "ref_type":"ptp",
+        "traceable": false,
+        "version": "IEEE1588-2008",
+        "gmid": "08-00-11-ff-fe-21-e1-b0",
+        "locked": true
+      }
+    ],
+    "interfaces" : [
+      {
+        "name":"eth0",
+        "chassis_id":"00-15-5d-e3-c1-1e",
+        "port_id":"00-15-5d-e3-c1-1e"
+      }
+    ]
+  },
+  {
+    "label": "Example 2 Node",
+    "description": "Node with two identical Devices where each is a different product with a unique serial number",
+    "tags": {
+      "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
+      "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
+      "urn:x-nmos:tag:asset:instance-id/v1.0": [ "FRAME-12345ABC" ]
+    },
+    "id": "c2688b73-439c-47b7-8c69-8e8b20bb1015",
+    "version": "1684746639:31415927",
+    "hostname": "host2.example.com",
+    "href": "http://host2.example.com/",
+    "api": {
+      "versions": [ "v1.1", "v1.2", "v1.3" ],
+      "endpoints": [
+        {
+          "host": "host2.example.com",
+          "port": 80,
+          "protocol": "http"
+        }
+      ]
+    },
+    "services": [],
+    "caps": {},
+    "clocks": [
+      {
+        "name": "clk0",
+        "ref_type":"ptp",
+        "traceable": false,
+        "version": "IEEE1588-2008",
+        "gmid": "08-00-11-ff-fe-21-e1-b0",
+        "locked": true
+      }
+    ],
+    "interfaces" : [
+      {
+        "name":"eth0",
+        "chassis_id":"00-15-5d-e3-c1-1f",
+        "port_id":"00-15-5d-e3-c1-1f"
+      }
+    ]
+  },
+  {
+    "label": "Example 3 Node",
+    "description": "Node with two identical Devices where only the Node has a unique serial number",
+    "tags": {
+      "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
+      "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
+      "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC" ]
+    },
+    "id": "281dca7d-f6ae-40b2-9a19-c3e9a49c9b58",
+    "version": "1684746640:31415927",
+    "hostname": "host3.example.com",
+    "href": "http://host3.example.com/",
+    "api": {
+      "versions": [ "v1.1", "v1.2", "v1.3" ],
+      "endpoints": [
+        {
+          "host": "host3.example.com",
+          "port": 80,
+          "protocol": "http"
+        }
+      ]
+    },
+    "services": [],
+    "caps": {},
+    "clocks": [
+      {
+        "name": "clk0",
+        "ref_type":"ptp",
+        "traceable": false,
+        "version": "IEEE1588-2008",
+        "gmid": "08-00-11-ff-fe-21-e1-b0",
+        "locked": true
+      }
+    ],
+    "interfaces" : [
+      {
+        "name":"eth0",
+        "chassis_id":"00-15-5d-e3-c1-20",
+        "port_id":"00-15-5d-e3-c1-20"
+      }
+    ]
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "label": "Example 1 Device",
+    "description": "Simple product, a Node with a single logical Device",
+    "tags": {
+      "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
+      "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
+      "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC" ],
+      "urn:x-nmos:tag:asset:function/v1.0": [ "Decoder" ]
+    },
+    "id": "1afcf906-a4f9-4e26-b18d-17f39caf4513",
+    "node_id": "90b413e0-86cb-4fef-8ebc-42e9d5864e42",
+    "version": "1684746638:31415927",
+    "receivers": [],
+    "senders": [],
+    "type": "urn:x-nmos:device:generic",
+    "controls": [
+      {
+        "type": "urn:x-nmos:control:sr-ctrl/v1.1",
+        "href": "http://host1.example.com/x-nmos/connection/v1.1"
+      }
+    ]
+  },
+  {
+    "label": "Example 2 Device 1",
+    "description": "Node with two identical Devices where each is a different product with a unique serial number",
+    "tags": {
+      "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
+      "urn:x-nmos:tag:asset:product/v1.0": [ "Model-B" ],
+      "urn:x-nmos:tag:asset:instance-id/v1.0": [ "DEC-12345ABC" ],
+      "urn:x-nmos:tag:asset:function/v1.0": [ "Decoder" ]
+    },
+    "id": "7b177232-c9c3-4b41-a860-12813eabddbd",
+    "node_id": "c2688b73-439c-47b7-8c69-8e8b20bb1015",
+    "version": "1684746639:31415927",
+    "receivers": [],
+    "senders": [],
+    "type": "urn:x-nmos:device:generic",
+    "controls": [
+      {
+        "type": "urn:x-nmos:control:sr-ctrl/v1.1",
+        "href": "http://host2.example.com:8080/x-nmos/connection/v1.1"
+      }
+    ]
+  },
+  {
+    "label": "Example 2 Device 2",
+    "description": "Node with two identical Devices where each is a different product with a unique serial number",
+    "tags": {
+      "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
+      "urn:x-nmos:tag:asset:product/v1.0": [ "Model-C" ],
+      "urn:x-nmos:tag:asset:instance-id/v1.0": [ "DEC-67890XYZ" ],
+      "urn:x-nmos:tag:asset:function/v1.0": [ "Decoder" ]
+    },
+    "id": "01e628e4-8c6f-4930-84df-0bb97064b375",
+    "node_id": "c2688b73-439c-47b7-8c69-8e8b20bb1015",
+    "version": "1684746639:31415927",
+    "receivers": [],
+    "senders": [],
+    "type": "urn:x-nmos:device:generic",
+    "controls": [
+      {
+        "type": "urn:x-nmos:control:sr-ctrl/v1.1",
+        "href": "http://host2.example.com:8081/x-nmos/connection/v1.1"
+      }
+    ]
+  },
+  {
+    "label": "Example 3 Device 1",
+    "description": "Node with two identical Devices where only the Node has a unique serial number",
+    "tags": {
+      "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
+      "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
+      "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC-1" ],
+      "urn:x-nmos:tag:asset:function/v1.0": [ "Decoder" ]
+    },
+    "id": "3aabdefc-e1b2-4768-9925-7a7136e1598c",
+    "node_id": "281dca7d-f6ae-40b2-9a19-c3e9a49c9b58",
+    "version": "1684746640:31415927",
+    "receivers": [],
+    "senders": [],
+    "type": "urn:x-nmos:device:generic",
+    "controls": [
+      {
+        "type": "urn:x-nmos:control:sr-ctrl/v1.1",
+        "href": "http://host3.example.com/x-nmos/connection/v1.1"
+      }
+    ]
+  },
+  {
+    "label": "Example 3 Device 2",
+    "description": "Node with two identical Devices where only the Node has a unique serial number",
+    "tags": {
+      "urn:x-nmos:tag:asset:manufacturer/v1.0": [ "Vendor-A" ],
+      "urn:x-nmos:tag:asset:product/v1.0": [ "Model-A" ],
+      "urn:x-nmos:tag:asset:instance-id/v1.0": [ "12345ABC-2" ],
+      "urn:x-nmos:tag:asset:function/v1.0": [ "Decoder" ]
+    },
+    "id": "864345bb-a45d-42a7-9ced-e9772604e876",
+    "node_id": "281dca7d-f6ae-40b2-9a19-c3e9a49c9b58",
+    "version": "1684746640:31415927",
+    "receivers": [],
+    "senders": [],
+    "type": "urn:x-nmos:device:generic",
+    "controls": [
+      {
+        "type": "urn:x-nmos:control:sr-ctrl/v1.1",
+        "href": "http://host3.example.com/x-nmos/connection/v1.1"
+      }
+    ]
+  }
+]
