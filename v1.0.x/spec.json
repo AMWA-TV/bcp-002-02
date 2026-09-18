@@ -1,0 +1,24 @@
+{
+  "amwa_id": "BCP-002-02",
+  "url": "https://specs.amwa.tv/bcp-002-02",
+  "name": "Asset Distinguishing Information",
+  "status": "AMWA Specification",
+  "repo_name": "bcp-002-02",
+  "alt_repo_name": "bcp-resource-information",
+  "repo_url": "https://github.com/AMWA-TV/bcp-002-02",
+  "releases": "v1.0.0",
+  "default_branch": "v1.0.x",
+  "show_in_index": true,
+  "intro": {
+    "what_does_it_do": [
+      "It defines how to provide human-readable distinguishing information for NMOS Assets - Nodes and Devices."
+    ],
+    "why_does_it_matter": [
+      "Inconsistent naming approaches across vendors and products can complicate configuration and operation."
+    ],
+    "how_does_it_work": [
+      "It defines tags for fixed information about Nodes and Devices.",
+      "These include Manufacturer, Product Name, Instance Identifier, and (for Devices only) Function."
+    ]
+  }
+}
